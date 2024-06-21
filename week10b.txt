@@ -1,0 +1,95 @@
+week10b
+b) PRIORITY ALGORITHM:
+Step 1: Start the process
+Step 2: Accept the number of processes in the ready Queue
+Step 3: For each process in the ready Q, assign the process id, process priority and accept the CPU burst time
+Step 4: Start the Ready Q according the highest priority by sorting according to highest to lowest priority.
+Step 5: Set the waiting time of the first process as ‘0’ and its turnaround time as its burst time.
+Step 6: For each process in the ready queue, calculate
+Waiting time for process(n)= waiting time of process (n-1)+Burst time of process(n-1)
+Turn around time for Process(n)= waiting time of Process(n)+ Burst time for process(n)
+Step 6: Calculate
+Average waiting time = Total waiting Time / Number of process
+Average Turnaround time = Total Turnaround Time / Number of process
+Step 7: Stop the process
+
+
+SOURCE CODE:
+#include<stdio.h>
+void main()
+{
+int pid[10],bt[10],pr[10],wt[10],tat[10],n,twt=0,ttat=0,i,j,t;
+float awt,atat;
+printf("Enter no.of processes:");
+scanf("%d",&n);
+printf("\n Enter burst times:");
+for(i=0;i<n;i++)
+scanf("%d",&bt[i]);
+printf("\n Enter PID:");
+for(i=0;i<n;i++)
+CMR Institute of Technology
+Operating Systems(Linux) Lab Page 42
+scanf("%d",&pid[i]);
+printf("\n Enter Priorities:");
+for(i=0;i<n;i++)
+scanf("%d",&pr[i]);
+for(i=0;i<n;i++){
+for(j=i+1;j<n;j++){
+if(pr[i]>pr[j]){
+t=pr[i];
+pr[i]=pr[j];
+pr[j]=t;
+t=bt[i];
+bt[i]=bt[j];
+bt[j]=t;
+t=pid[i];
+pid[i]=pid[j];
+pid[j]=t;
+}}}
+wt[0]=0;
+tat[0]=bt[0];
+for(i=1;i<n;i++){
+wt[i]=tat[i-1];
+tat[i]=bt[i]+wt[i];
+}
+for(i=0;i<n;i++){
+CMR Institute of Technology
+Operating Systems(Linux) Lab Page 43
+ttat= ttat+tat[i];
+twt=twt+wt[i];
+}
+printf("\n PID PRIORITY \t BT \t WT \t TAT");
+for(i=0;i<n;i++)
+printf("\n %d\t%d\t%d\t%d\t%d",pid[i],pr[i],bt[i],wt[i],tat[i]);
+awt=(float)twt/n;
+atat=(float)ttat/n;
+printf("\nAvg. Waiting Time=%f",awt);
+printf("\nAvg. Turn around time=%f",atat);
+}
+
+
+Output:
+Enter no.of processes:4
+
+Enter burst times:2
+6
+4
+5
+
+Enter PID:3
+6
+4
+5
+
+Enter Priorities: 3
+2
+6
+1
+
+PID 	PRIORITY	BT	WT	TAT
+5	1		5	0	5
+6	2		6	5	11	
+3	3		2	11	13
+4	6		4	13	17
+Avg waiting Time=7.25000
+Avg. Turn around time=11.500000

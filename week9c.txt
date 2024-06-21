@@ -1,0 +1,46 @@
+week 9c
+AIM:Write a C program in which a parent writes a message to a pipe and the child reads themessage.
+ALGORITHM:
+Step 1: Start
+Step 2: import libraryfiles
+#include <errno.h>
+#include<fcntl.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/wait.h>
+#include <unistd.h>
+Step 3:create an array of 2 size a[0] is for reading and a[1] is for writing over a pipe
+Step 4:open pipe using pipe(a)
+Step 5:write a string "Hi" in pipe using write() function
+Step 6:read from pipe "Hi" message using read() function
+Step 7:stop
+SOURCE CODE:
+#include <stdio.h>
+#include<stdlib.h>
+#include <sys/wait.h> /* contains prototype for wait */
+int main(void)
+{
+int pid;
+int status;
+printf("Hello World!\n");
+pid = fork( );
+CMR Institute of Technology
+Operating Systems(Linux) Lab Page 37
+if(pid == -1) /* check for error in fork */
+{
+perror("bad fork");
+exit(1);
+}
+if (pid == 0)
+printf("I am the child process.\n");
+else { wait(&status); /* parent waits for child to finish */
+printf("I am the parent process.\n");
+return 0;
+}
+}
+OUTPUT:
+
+./a.out
+hello world!
+I am the child process
+I am the parent process

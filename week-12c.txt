@@ -1,0 +1,65 @@
+week-12c
+c) IndexedAlgorithm:
+Step 1: Start the program.
+Step2: Read the number of files
+Step 3: Read the index block for each file.
+Step 4: For each file, read the number of blocks occupied and number of blocks of the file.
+Step 5: Link all the blocks of the file to the index block.
+Step 6: Display the file name, index block, and the blocks occupied by the file.
+Step 7: Stop the program
+
+
+SOURCE CODE:
+#include<stdio.h>
+main()
+{
+int n,m[20],i,j,sb[20],b[20][20],x;
+printf("\nEnter no. of files:");
+scanf("%d",&n);
+for(i=0;i<n;i++)
+{
+printf("\nEnter index block of file%d:",i+1);
+scanf("%d",&sb[i]);
+printf("\nEnter length of file%d:",i+1);
+scanf("%d",&m[i]);
+printf("enter blocks of file%d:",i+1);
+for(j=0;j<m[i];j++)
+scanf("%d",&b[i][j]);
+}
+printf("\nFile\t Index\tLength\n");
+for(i=0;i<n;i++)
+CMR Institute of Technology
+Operating Systems(Linux) Lab Page 57
+{
+printf("%d\t%d\t%d\n",i+1,sb[i],m[i]);
+}
+printf("\nEnter file name:");
+scanf("%d",&x);
+printf("\nfile name is:%d",x);
+printf("\nIndex is:%d",sb[x-1]);
+printf("\nBlocks occupied are:");
+for(j=0;j<m[x-1];j++)
+printf("%4d",b[x-1][j]);
+}
+
+
+OUTPUT:
+Enter no. of files: 2
+Enter index block of file 1:2
+Enter length of file 1: 5
+Enter blocks of file 1: 2 3 4 5 6 8
+
+Enter index block of file 2:13
+
+Enter length of file 2: 8
+Enter blocks of file 2:13 25 42 33 57 65 72 84
+
+File	Index	length
+1	2	5
+2	13	8
+
+Enter file name: 2
+
+file name is 2
+Index is: 13
+Blocks occupied are: 13 25 42 57 65 72 84
