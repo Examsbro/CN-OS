@@ -24,8 +24,6 @@ if(pid<0)
 printf("failed to create child");
 else if(pid==0)
 {
-CMR Institute of Technology
-Operating Systems(Linux) Lab Page 34
 printf("after fork\n");
 global++;
 local++;
