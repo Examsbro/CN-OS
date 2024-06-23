@@ -1,32 +1,28 @@
 #include<stdio.h>
-#include<stdlib.h>
+
 int main()
 {
+    int framesize,sent=0,ack,i;
+    printf("Enter the number of frames\n");
+    scanf("%d", &framesize);
 
-int i,j,noframes,x,x1=10;
-for(i=0;i<200;i++)
-rand();
-noframes=rand()/200;
-i=1;
-j=1;
-noframes=noframes/8;
-printf("\n Number of frames is %d", noframes);
-getch();
-while(noframes>0)
-{
-printf("\n Sending frame %d",i);
-srand(x1++);
-x=rand()%10;
-if(x%2==0)
-{
-printf("\nsending frame %d",i);
-srand(x1++);
-x=rand()%10;
-}
-printf("\n Ack for frame %d ",j);
-noframes-=1;
-i++;
-j++;
-}
-printf("\n End of Stop and wait protocol");
+    while(1)
+    {
+        for(i=0;i<framesize;i++)
+        {
+            printf("Frame %d has been transmitted\n",sent);
+            sent++;
+            if(sent==framesize){
+                break;
+            }
+        }
+        printf("\n please enter the last acknowledgement received \n");
+        scanf("%d",&ack);
+        if(ack>=framesize)
+        {
+            break;
+        }
+        sent=ack;
+    }
+    return 0;
 }
