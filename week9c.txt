@@ -14,6 +14,8 @@ Step 4:open pipe using pipe(a)
 Step 5:write a string "Hi" in pipe using write() function
 Step 6:read from pipe "Hi" message using read() function
 Step 7:stop
+
+
 SOURCE CODE:
 #include <stdio.h>
 #include<stdlib.h>
@@ -24,8 +26,6 @@ int pid;
 int status;
 printf("Hello World!\n");
 pid = fork( );
-CMR Institute of Technology
-Operating Systems(Linux) Lab Page 37
 if(pid == -1) /* check for error in fork */
 {
 perror("bad fork");
