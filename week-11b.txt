@@ -29,8 +29,6 @@ printf("\n Enter the Timeslice \n");
 scanf("%d",&ts);
 printf("\n Enter the Burst Time for the process");
 for(i=1;i<=n;i++){
-CMR Institute of Technology
-Operating Systems(Linux) Lab Page 49
 scanf("%d",&bt1[i]);
 bt[i]=bt1[i];
 }
@@ -57,8 +55,6 @@ ttat=ttat+tat[i];
 }
 awt=(float)twt/n;
 atat=(float)ttat/n;
-CMR Institute of Technology
-Operating Systems(Linux) Lab Page 50
 printf("\n PID \t BT \t WT \t TAT\n");
 for(i=1;i<=n;i++) {
 printf("\n %d \t %d \t %d \t %d \t\n",i,bt1[i],wt[i],tat[i]);
