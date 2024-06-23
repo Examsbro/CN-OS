@@ -24,8 +24,6 @@ printf("\nThe process is divided into %d pages",pages);
 frames = memsize/pagesize;
 printf("\n\nThe main memory is divided into %d frames\n",frames);
 for(i=0;i<frames;i++)
-CMR Institute of Technology
-Operating Systems(Linux) Lab Page 60
 framearr[i]=-1; /* Initializing array elements with -1*/
 for(i=0;i<pages;i++){
 pos: printf("\nEnter the frame number of page %d: ",i);
@@ -52,8 +50,6 @@ printf("\nEnter the logical address: ");
 scanf("%d",&log);
 printf("\nEnter the base address: ");
 scanf("%d",&base);
-CMR Institute of Technology
-Operating Systems(Linux) Lab Page 61
 pageno = log/pagesize;
 for(i=0;i<frames;i++)
 if(framearr[i]==pageno)
