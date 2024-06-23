@@ -8,7 +8,7 @@ int minimum(int a,int b)
 	else
 	  return b;
 }
-void main()
+main()
 {
 	int i,j,k,n,start,end,adj[MAX][MAX],path[MAX][MAX];
 	printf("Enter number of vertices : ");
