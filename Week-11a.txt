@@ -24,8 +24,6 @@ scanf("%d",&n);
 printf("\n Enter burst times:");
 for(i=0;i<n;i++)
 scanf("%d",&bt[i]);
-CMR Institute of Technology
-Operating Systems(Linux) Lab Page 46
 printf("\n Enter PID:");
 for(i=0;i<n;i++)
 scanf("%d",&pid[i]);
@@ -51,8 +49,6 @@ tat[i]=bt[i]+wt[i];
 }
 for(i=0;i<n;i++)
 {
-CMR Institute of Technology
-Operating Systems(Linux) Lab Page 47
 ttat= ttat+tat[i];
 twt=twt+wt[i];
 }
@@ -68,15 +64,12 @@ printf("\nAvg. Turn around time=%f",atat);
 
 OUTPUT :
 Enter no.of processes:3
-
 Enter burst times:4
 13
 25
-
 Enter PID:1
 2
 3
-
 PID 	BT	WT	TAT
 1	4	0	4
 2	13	4	17
