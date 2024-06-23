@@ -4,7 +4,7 @@ void main()
 {
 int a[15];
 int i,j,k,n,c=0,pos=0;
-printf("\n Enter the no of Bits:\t");
+printf("\n Enter n value:\n");
 scanf("%d",&n);
 for(i=0;i<n;i++)
 scanf("%d",&a[i]);
@@ -29,12 +29,12 @@ n=n+1;
 else
 c=0;
 }
-printf("\n Data After Stuffing:");
-printf("011111110 \t");
+printf("\n Elements After Stuffing:\n");
+printf("011111110 \n");
 for(i=0;i<n;i++)
 {
 printf("%d",a[i]) ;
 }
-printf("\t011111110");
+printf("\n011111110");
 getch();
 }
