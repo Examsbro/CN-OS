@@ -28,8 +28,6 @@ scanf("%d",&b[i][j]);
 }
 printf("\nFile\t Index\tLength\n");
 for(i=0;i<n;i++)
-CMR Institute of Technology
-Operating Systems(Linux) Lab Page 57
 {
 printf("%d\t%d\t%d\n",i+1,sb[i],m[i]);
 }
