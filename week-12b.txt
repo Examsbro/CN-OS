@@ -28,8 +28,6 @@ scanf("%s",&f[i].fname);
 printf("Enter starting block:");
 scanf("%d",&f[i].start);
 f[i].block[0]=f[i].start;
-CMR Institute of Technology
-Operating Systems(Linux) Lab Page 55
 printf("Enter no.of blocks:");
 scanf("%d",&f[i].size);
 printf("Enter block numbers:");
