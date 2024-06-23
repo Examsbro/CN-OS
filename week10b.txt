@@ -27,8 +27,6 @@ for(i=0;i<n;i++)
 scanf("%d",&bt[i]);
 printf("\n Enter PID:");
 for(i=0;i<n;i++)
-CMR Institute of Technology
-Operating Systems(Linux) Lab Page 42
 scanf("%d",&pid[i]);
 printf("\n Enter Priorities:");
 for(i=0;i<n;i++)
@@ -53,8 +51,6 @@ wt[i]=tat[i-1];
 tat[i]=bt[i]+wt[i];
 }
 for(i=0;i<n;i++){
-CMR Institute of Technology
-Operating Systems(Linux) Lab Page 43
 ttat= ttat+tat[i];
 twt=twt+wt[i];
 }
